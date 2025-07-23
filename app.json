@@ -10,20 +10,57 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#FF7EB3"
     },
+    "permissions": [
+      "ACCESS_FINE_LOCATION",
+      "ACCESS_BACKGROUND_LOCATION",
+      "VIBRATE",
+      "WAKE_LOCK",
+      "FOREGROUND_SERVICE"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "This app needs location access to track your position and trigger alarms when you reach your destination.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "This app needs background location access to monitor geofences and wake you up when you reach your destination.",
+        "UIBackgroundModes": ["location", "background-processing"]
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#FF7EB3"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_BACKGROUND_LOCATION",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.WAKE_LOCK",
+        "android.permission.VIBRATE",
+        "android.permission.ACCESS_COARSE_LOCATION"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow WakeMeGo to use your location to track your journey and trigger alarms when you reach your destination.",
+          "locationAlwaysPermission": "Allow WakeMeGo to use your location in the background to monitor geofences and wake you up when you reach your destination.",
+          "locationWhenInUsePermission": "Allow WakeMeGo to use your location to track your journey and show your position on the map."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#FF7EB3"
+        }
+      ]
+    ]
   }
 }
