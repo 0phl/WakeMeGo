@@ -1,20 +1,24 @@
+// WakeMeGo - Never miss your destination again
+import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { AppNavigator } from './src/navigation';
+import { NotificationService } from './src/services';
 
 export default function App() {
+  useEffect(() => {
+    // Initialize notification service
+    NotificationService.initialize();
+
+    return () => {
+      // Cleanup on app unmount
+      NotificationService.cleanup();
+    };
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <StatusBar style="light" backgroundColor="#FF7EB3" />
+      <AppNavigator />
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
