@@ -1,7 +1,6 @@
 // Common styles for WakeMeGo app
 import { StyleSheet } from 'react-native';
 import { COLORS } from './colors';
-import { TYPOGRAPHY } from './typography';
 
 export const COMMON_STYLES = StyleSheet.create({
   // Container styles
@@ -59,12 +58,17 @@ export const COMMON_STYLES = StyleSheet.create({
   },
   
   buttonText: {
-    ...TYPOGRAPHY.button,
+    fontSize: 16,
+    fontWeight: '600',
+    color: COLORS.textLight,
+    textAlign: 'center',
   },
-  
+
   secondaryButtonText: {
-    ...TYPOGRAPHY.button,
+    fontSize: 16,
+    fontWeight: '600',
     color: COLORS.textPrimary,
+    textAlign: 'center',
   },
   
   // Input styles
@@ -80,10 +84,30 @@ export const COMMON_STYLES = StyleSheet.create({
   },
   
   // Text styles
-  title: TYPOGRAPHY.heading1,
-  subtitle: TYPOGRAPHY.heading2,
-  body: TYPOGRAPHY.body,
-  caption: TYPOGRAPHY.caption,
+  title: {
+    fontSize: 32,
+    fontWeight: '700',
+    color: COLORS.textPrimary,
+    lineHeight: 40,
+  },
+  subtitle: {
+    fontSize: 24,
+    fontWeight: '600',
+    color: COLORS.textPrimary,
+    lineHeight: 32,
+  },
+  body: {
+    fontSize: 16,
+    fontWeight: '400',
+    color: COLORS.textPrimary,
+    lineHeight: 24,
+  },
+  caption: {
+    fontSize: 12,
+    fontWeight: '400',
+    color: COLORS.textSecondary,
+    lineHeight: 16,
+  },
   
   // Layout styles
   row: {
