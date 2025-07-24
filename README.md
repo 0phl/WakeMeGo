@@ -33,7 +33,7 @@ Wake Me Go is designed for commuters who nap or relax during rides. It works off
 | **Maps** | `react-native-maps` |
 | **Notifications & Audio** | `expo-notifications` + `expo-av` |
 | **Storage** | `@react-native-async-storage/async-storage` |
-| **Foreground Service** | `@voximplant/react-native-foreground-service` |
+| **Background Tasks** | `expo-location` + `expo-notifications` |
 | **Navigation** | `@react-navigation/native` |
 | **Styling** | `react-native-linear-gradient`, custom UI |
 
