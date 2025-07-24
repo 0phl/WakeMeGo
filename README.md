@@ -1,3 +1,5 @@
+> A self-project for practicing React Native.
+
 # 🚍 Wake Me Go
 
 **Never miss your stop again!**  
